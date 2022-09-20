@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:new_app/constants_color.dart';
 
 void main(){
   runApp(const MyApp());
@@ -37,7 +38,7 @@ class _NewPageState extends State<NewPage> {
       appBar: AppBar(
         title: const Text("Firebase Attempt"),
         shadowColor: Colors.black45,
-        backgroundColor: Colors.blue.shade200,
+        backgroundColor: ConstantColors.darkBlue,
       ),
       body: const MainScreen(),
     );
@@ -224,13 +225,14 @@ class _MainScreenState extends State<MainScreen> {
         Padding(
           padding: EdgeInsets.only(left : screenWidth * 0.05 , top : screenHeight * 0.08),
           child: SizedBox(
+
             height: 45.0,
             width: 350.0,
             child: ElevatedButton(onPressed: () {
                 
             },            
             style: const ButtonStyle(
-              backgroundColor: MaterialStatePropertyAll(Colors.lightBlueAccent),
+              backgroundColor: MaterialStatePropertyAll(ConstantColors.darkBlue),
                 textStyle: MaterialStatePropertyAll(
                   TextStyle(
                     fontSize: 18.0,
