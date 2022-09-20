@@ -81,17 +81,20 @@ class _MainScreenState extends State<MainScreen> {
               padding: EdgeInsets.only(left : screenWidth * 0.02),
               child: SizedBox(
                 height: screenHeight * 0.06,
-                width: screenWidth * 0.7,
-                child: const TextField(
-                    style: TextStyle(
-                      letterSpacing: 1.0
+                width: screenWidth * 0.72,
+                child: Padding(
+                  padding: EdgeInsets.only(left : screenWidth * 0.03),
+                  child: const TextField(
+                      style: TextStyle(
+                        letterSpacing: 1.0
+                      ),
+                      decoration: InputDecoration(
+                        focusColor: Colors.white,
+                        border: OutlineInputBorder(),
+                        labelText: "Enter your name",
+                      ),
                     ),
-                    decoration: InputDecoration(
-                      focusColor: Colors.white,
-                      border: OutlineInputBorder(),
-                      labelText: "Enter your name",
-                    ),
-                  ),
+                ),
               ),
             ),
           ],
@@ -110,20 +113,83 @@ class _MainScreenState extends State<MainScreen> {
                 padding: EdgeInsets.only(left: screenWidth * 0.02),
                 child: SizedBox(
                   height: screenHeight * 0.06,
-                  width: screenWidth * 0.7,
-                  child: const TextField(
-                    style: TextStyle(letterSpacing: 1.0),
-                    decoration: InputDecoration(
-                      focusColor: Colors.white,
-                      border: OutlineInputBorder(),
-                      labelText: "Enter your roll number",
+                  width: screenWidth * 0.73,
+                  child: Padding(
+                    padding: EdgeInsets.only(left : screenWidth * 0.04),
+                    child: const TextField(
+                      style: TextStyle(letterSpacing: 1.0),
+                      decoration: InputDecoration(
+                        focusColor: Colors.white,
+                        border: OutlineInputBorder(),
+                        labelText: "Enter your roll number",
+                      ),
                     ),
                   ),
                 ),
               ),
             ],
           ),
-        )    
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+              left: screenWidth * 0.05, top: screenHeight * 0.05),
+          child: Row(
+            children: [
+              const Text(
+                "Age : ",
+                textScaleFactor: 1.3,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.03),
+                child: SizedBox(
+                  height: screenHeight * 0.06,
+                  width: screenWidth * 0.74,
+                  child: Padding(
+                    padding: EdgeInsets.only(left : screenWidth * 0.05),
+                    child: const TextField(
+                      style: TextStyle(letterSpacing: 1.0),
+                      decoration: InputDecoration(
+                        focusColor: Colors.white,
+                        border: OutlineInputBorder(),
+                        labelText: "Enter your age",
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ), 
+        Padding(
+          padding: EdgeInsets.only(
+              left: screenWidth * 0.05, top: screenHeight * 0.05),
+          child: Row(
+            children: [
+              const Text(
+                "Father's\nName: ",
+                textScaleFactor: 1.3,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.03),
+                child: SizedBox(
+                  height: screenHeight * 0.06,
+                  width: screenWidth * 0.7,
+                  child: Padding(
+                    padding:  EdgeInsets.only(left : screenWidth * 0.01),
+                    child: const TextField(
+                      style: TextStyle(letterSpacing: 1.0),
+                      decoration: InputDecoration(
+                        focusColor: Colors.white,
+                        border: OutlineInputBorder(),
+                        labelText: "Enter your father's name",
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ), 
       ],
     );
   }
