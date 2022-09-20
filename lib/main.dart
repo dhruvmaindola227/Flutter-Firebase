@@ -60,7 +60,7 @@ class _MainScreenState extends State<MainScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
           Padding(
-            padding: EdgeInsets.only(top : screenHeight * 0.08),
+            padding: EdgeInsets.only(top : screenHeight * 0.05),
             child: SizedBox(
               width: double.infinity,
               child: Text("Insert details",
@@ -72,7 +72,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
        Padding(
-        padding: EdgeInsets.only(left: screenWidth * 0.04, top: screenHeight * 0.1),
+        padding: EdgeInsets.only(left: screenWidth * 0.04, top: screenHeight * 0.09),
         child: Row(
           children:[
             const Text("Name : ",
@@ -187,9 +187,63 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ),
               ),
+              
             ],
           ),
-        ), 
+        ),
+         Padding(
+          padding: EdgeInsets.only(
+              left: screenWidth * 0.05, top: screenHeight * 0.05),
+          child: Row(
+            children: [
+              const Text(
+                "Mother's\nName: ",
+                textScaleFactor: 1.3,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.0),
+                child: SizedBox(
+                  height: screenHeight * 0.06,
+                  width: screenWidth * 0.71,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: screenWidth * 0.02),
+                    child: const TextField(
+                      style: TextStyle(letterSpacing: 1.0),
+                      decoration: InputDecoration(
+                        focusColor: Colors.white,
+                        border: OutlineInputBorder(),
+                        labelText: "Enter your mother's name",
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(left : screenWidth * 0.05 , top : screenHeight * 0.08),
+          child: SizedBox(
+            height: 45.0,
+            width: 350.0,
+            child: ElevatedButton(onPressed: () {
+                
+            },            
+            style: const ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(Colors.lightBlueAccent),
+                textStyle: MaterialStatePropertyAll(
+                  TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.white60
+                    )
+                ),
+                overlayColor: MaterialStatePropertyAll(Colors.blue),
+                shadowColor: MaterialStatePropertyAll(Colors.black),
+                elevation: MaterialStatePropertyAll(12)
+            ), child: const Text("SUBMIT"),
+            ),
+          ),
+        )
       ],
     );
   }
