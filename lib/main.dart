@@ -79,7 +79,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
          Padding(
-          padding: EdgeInsets.only(left: screenWidth * 0.04, top: screenHeight * 0.09),
+          padding: EdgeInsets.only(left: screenWidth * 0.04, top: screenHeight * 0.04),
           child: Row(
             children:[
               const Text("Name : ",
@@ -260,6 +260,29 @@ class _MainScreenState extends State<MainScreen> {
                   shadowColor: MaterialStatePropertyAll(Colors.black),
                   elevation: MaterialStatePropertyAll(12)
               ), child: const Text("SUBMIT"),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+                left: screenWidth * 0.05, top: screenHeight * 0.03),
+            child: SizedBox(
+              height: 45.0,
+              width: 350.0,
+              child: ElevatedButton(
+                onPressed: () {
+                  print("Checklist clicked.");
+
+                },
+                style: const ButtonStyle(
+                    backgroundColor:
+                        MaterialStatePropertyAll(ConstantColors.darkBlue),
+                    textStyle: MaterialStatePropertyAll(
+                        TextStyle(fontSize: 18.0, color: Colors.white60)),
+                    overlayColor: MaterialStatePropertyAll(Colors.blue),
+                    shadowColor: MaterialStatePropertyAll(Colors.black),
+                    elevation: MaterialStatePropertyAll(12)),
+                child: const Text("CHECK LIST"),
               ),
             ),
           )
