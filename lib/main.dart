@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:new_app/FirebaseList.dart';
 import 'package:new_app/constants_color.dart';
 
 void main() async {
@@ -54,7 +56,7 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainScreenState extends State<MainScreen> { 
   var nameController = TextEditingController();
   var rnoController = TextEditingController();
   var ageController = TextEditingController();
@@ -274,6 +276,11 @@ class _MainScreenState extends State<MainScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   print("Checklist clicked");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const FireBaseList()),
+                  );
 
                 },
                 style: const ButtonStyle(
