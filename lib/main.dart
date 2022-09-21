@@ -1,9 +1,11 @@
-import 'dart:math';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:new_app/constants_color.dart';
 
-void main(){
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -271,7 +273,7 @@ class _MainScreenState extends State<MainScreen> {
               width: 350.0,
               child: ElevatedButton(
                 onPressed: () {
-                  print("Checklist clicked.");
+                  print("Checklist clicked");
 
                 },
                 style: const ButtonStyle(
