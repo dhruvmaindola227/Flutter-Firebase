@@ -38,7 +38,7 @@ class _ListOfItemsState extends State<ListOfItems> {
         title: const Text("Firebase List"),
         backgroundColor: ConstantColors.darkBlue,
       ),
-      body: StreamBuilder(builder: (context, snapshot) { //snapshot has the data and the docs in it.
+      body: StreamBuilder(builder: (context, snapshot) { //snapshot has the data and the docs(rows) in it.
         if(snapshot.hasData){
           return ListView.builder(
                 itemCount: snapshot.data!.docs.length,  //number of rows in firebase
@@ -47,10 +47,47 @@ class _ListOfItemsState extends State<ListOfItems> {
                   snapshot.data!.docs[index];
             return Card(
               margin: const EdgeInsets.all(10),
-              child: ListTile(
-                title: Text(documentSnapshot['age'].toString()),
-                subtitle: Text(documentSnapshot['name'].toString())
-              ),
+              elevation: 10,
+              child: ColoredBox(              
+                color: ConstantColors.darkBlue,
+                child: SizedBox(
+                  height: screenHeight * 0.1,
+                  width: screenWidth * 0.9,
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left : 10.0 , top : 20.0),
+                        child: Column(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Name : ${documentSnapshot['name'].toString()}"),
+                            Padding(
+                              padding: const EdgeInsets.only(top : 8.0),
+                              child: Text("Roll Number : ${documentSnapshot['rno'].toString()}"),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left : 120.0 , top : 15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text("Age : ${documentSnapshot['age'].toString()}"),
+                            Text("Mother name : ${documentSnapshot['mothername'].toString()}"),
+                            Text( "Father name : ${documentSnapshot['fathername'].toString()}")
+                          ],
+                        ),
+                      )
+                    ],
+                  )
+              
+                ),
+              )
+              //  ListTile(
+              //   title: Text(documentSnapshot['age'].toString()),
+              //   subtitle: Text(documentSnapshot['name'].toString())
+              // ),
             );
           },
           );
